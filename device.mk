@@ -19,7 +19,9 @@ PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_CHARACTERISTICS := tablet
 
 # Rootdir
-PRODUCT_PACKAGES += \
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_RAMDISK)/fstab.mt6765 \
+    $(LOCAL_PATH)/rootdir/etc/fstab.mt6765:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.mt6765
 
 PRODUCT_PACKAGES += \
     fstab.enableswap \
@@ -50,4 +52,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
 # Inherit the proprietary files
-$(call inherit-product, vendor/lenovo/achilles6_row_wifi/achilles6_row_wifi-vendor.mk)
+$(call inherit-product-if-exists, vendor/lenovo/achilles6_row_wifi/achilles6_row_wifi-vendor.mk)
