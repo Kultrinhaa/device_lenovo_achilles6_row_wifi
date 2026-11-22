@@ -42,10 +42,8 @@ PRODUCT_PACKAGES += \
     meta_init.project.rc \
     meta_init.rc \
     multi_init.rc \
-    init.rc \
     init.recovery.mt6765.rc \
     init.recovery.mt8768.rc \
-    ueventd.rc \
 
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
